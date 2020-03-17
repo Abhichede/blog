@@ -14,7 +14,7 @@ var templ = template.Must(template.New("posts").Parse(readPosts()))
 var _posts = posts.AllPosts()
 
 func main() {
-
+	fmt.Println(_posts)
 	http.Handle("/", http.HandlerFunc(LoadPosts))
 	fmt.Println("Server is listening on :8085 ")
 	err := http.ListenAndServe(":8085", nil)
@@ -25,7 +25,6 @@ func main() {
 
 //LoadPosts ...
 func LoadPosts(w http.ResponseWriter, req *http.Request) {
-	fmt.Println(_posts)
 	templ.Execute(w, _posts)
 }
 

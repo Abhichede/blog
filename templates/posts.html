@@ -16,8 +16,10 @@
       <tbody>
         {{range $val := .Posts}}
         <tr>
+          <td>{{$val.Id}}</td>
           <td>{{$val.Title}}</td>
           <td>{{$val.Description}}</td>
+          <td><a href="/post?id={{$val.Id}}">View</a></td>
         </tr>
         {{end}}
       </tbody>
