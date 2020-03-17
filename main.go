@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	posts "./posts/posts"
+	posts "./posts"
 )
 
 // Create a blog which displayes the blog posts from the json
