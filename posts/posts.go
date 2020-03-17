@@ -2,6 +2,7 @@ package posts
 
 import (
 	"encoding/json"
+	"flag"
 	"io/ioutil"
 	"log"
 	"os"
@@ -39,6 +40,8 @@ func JSONParser(filename string) Posts {
 	return posts
 }
 
-func AllPosts(blogPosts string) Posts {
+func AllPosts() Posts {
+	blogPosts := flag.String("src", "blogs.json", "A JSON file which contains the blog posts.")
+	flag.Parse()
 	return JSONParser(*blogPosts)
 }
