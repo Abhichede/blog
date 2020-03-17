@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Blog</title>
+</head>
+<body>
+  <h1>
+    All Posts
+    <table>
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{range $val := .Posts}}
+        <tr>
+          <td>{{$val.Title}}</td>
+          <td>{{$val.Description}}</td>
+        </tr>
+        {{end}}
+      </tbody>
+    </table>
+  </h1>
+</body>
+</html>
